@@ -1,0 +1,29 @@
+
+object Settings {
+	Scalar values[String];
+};
+
+function Settings.storeValue!(String key, Scalar value){
+	this.values[key] = value;
+}
+
+function Scalar Settings.echoValue(String key) {
+	if(this.values.has(key))
+		return this.values[key];
+	return -1.0;
+}
+
+operator entry() {
+	Settings s = Settings(); // objects need to be initialized
+	report(s);
+
+	report(s.storeValue('width', 8.0));
+	report(s.storeValue('length', 6.0));
+
+
+	// Objects are reference-counted, so we must clone
+	Settings t = s.clone();
+	t.storeValue('height', 4.0);
+	report(s.echoValue('height'));
+
+}

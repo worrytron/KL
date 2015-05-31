@@ -1,0 +1,19 @@
+operator entry() {
+
+	Scalar settings[String];
+
+	settings['width'] = 8.0;
+	settings['height'] = 6.0;
+	settings['length'] = 4.0;
+
+	report(settings);
+	report(settings['width']);
+
+	report(settings.has('width')); // returns true
+	report(settings.has('diagonal')); // returns false
+
+	for(key, value in settings) {
+		report('value of ' + key + ' is ' + value);
+	}
+
+}

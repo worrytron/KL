@@ -1,6 +1,6 @@
 function sayMessage(String message, io Integer messageCount) {
 	//Line below doesn't work, because message is an in, not an io, and therefore is not writeable
-	//message += 'appended to message'  
+	//message += 'appended to message'; 
 	report('Saying: ' + message);
 	messageCount++;
 }
