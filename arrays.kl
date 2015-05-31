@@ -33,4 +33,6 @@ operator entry() {
 	otherNamesClone.push('g');
 	otherNamesClone.push('h');
 	report(someNames);
+
+	
 }
