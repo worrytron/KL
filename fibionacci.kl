@@ -1,0 +1,19 @@
+/*
+** Example: Fibonacci Sequence
+*/
+
+/* Recursively compute the Fibonacci sequence.
+** The first term is returned with n = 0
+*/
+
+function Integer fibonacci(Integer n) {
+  if (n <= 1)
+    return 1; // The first two terms (n=0 or n=1) are 1
+  else
+    return fibonacci(n - 2) + fibonacci(n - 1);
+}
+
+operator entry() {
+  for (Integer i = 0; i < 10; ++i)
+    report(fibonacci(i));
+}

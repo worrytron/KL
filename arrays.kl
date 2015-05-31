@@ -1,0 +1,36 @@
+operator entry() {
+	String fourNames[4];
+	fourNames[0] = 'a';
+	fourNames[1] = 'b';
+	fourNames[2] = 'c';
+	fourNames[3] = 'd';
+
+	String someNames[];
+	report(someNames.size());
+
+	someNames.push('a');
+	someNames.push('b');
+	someNames.push('c');
+	someNames.push('d');
+	report(someNames);
+
+	someNames.resize(2);
+	report(someNames);
+
+	someNames.push('d');
+	report(someNames);
+
+	// This array is not a duplicate, it is a reference..
+	String otherNames[];
+	otherNames = someNames;
+	otherNames.push('e');
+	otherNames.push('f');
+	report(someNames);
+
+	// .. so clone it instead
+	String otherNamesClone[];
+	otherNamesClone = someNames.clone;
+	otherNamesClone.push('g');
+	otherNamesClone.push('h');
+	report(someNames);
+}

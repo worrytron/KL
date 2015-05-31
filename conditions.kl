@@ -1,0 +1,35 @@
+operator entry() {
+	
+	Integer myNum = 12;
+
+	if(myNum < 12) {
+		report('condition is true.');
+	} else if(myNum > 12) {
+		report('condition is false.');
+	} else {
+		report('exactly 12.');
+	}
+
+	switch(myNum) {
+		case 10:
+		{
+			report('is exactly 10.');
+			break;
+		}
+		case 11:
+		{
+			report('is exactly 11.');
+			break;
+		}
+		case 12:
+		{
+			report('is exactly 12.');
+			break;
+		}
+		default:
+		{
+			report('not handled');
+		}
+	}
+
+}

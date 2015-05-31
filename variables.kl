@@ -1,0 +1,16 @@
+operator entry() {
+	Boolean flag = true;
+	Integer intA = 12;
+	Integer intB = 7;
+	Scalar sA = 4.7;
+	Scalar sB = 4.3;
+	String nameA = 'Mark';
+	String nameB = 'Rohrer';
+
+	report(flag && true); // returns true
+	report(flag || false); // returns true
+	report(!flag); // returns false
+	report(intA + intB);
+	report(sA * sB);
+	report(nameA + ' ' + nameB);
+}

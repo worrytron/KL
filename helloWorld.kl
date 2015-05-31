@@ -1,0 +1,3 @@
+operator entry(){
+	report ('Hello World!');
+}
