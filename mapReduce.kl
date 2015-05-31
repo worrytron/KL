@@ -1,0 +1,23 @@
+require Math;
+
+// generate a lot of values
+operator generate(io Scalar value, Index index, Size size) {
+	value = mathRandomScalar(271, index);
+	report('value ' + index + ' created: ' + value);
+}
+
+// figure out which one is the highest one
+operator reduce(Scalar input, io Scalar output) {
+	if (input > output)
+		output = input;
+}
+
+operator entry(){
+	// Produces instructions on how to create a very large array -- but does not actually create it
+	// This has advantages in situataions where the required memory may ultimately exceed available memory
+	ArrayProducer<Scalar> randomValues = createArrayGenerator(createConstValue(Size(100)), generate);
+	ValueProducer<Scalar> minimumValue = createReduce(randomValues, reduce);
+
+	// Produce method actually creates the described large data sets
+	report(minimumValue.produce());
+}

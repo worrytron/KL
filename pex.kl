@@ -1,0 +1,29 @@
+// This operator can be named however you like. 
+// The object in the angle brackets is an indexed object of some kind.
+operator task<<<index>>>(io Scalar values[]){
+	values[index] = index * 3;
+	// Note that the report is in the wrong order
+	// use --showthread on execution
+	report (values[index]);
+
+}
+
+operator entry() {
+
+	Size count = 32;
+	Scalar values[];
+	values.resize(32);
+
+	// So instead of this...
+	//for (Size i=0; i<count; i++) {
+	//	values[i] = i * 3.0;
+	//}
+
+	// We call this ...
+	task<<<count>>>(values);
+	
+	// These values print in order
+	//report (values);
+	
+
+}
